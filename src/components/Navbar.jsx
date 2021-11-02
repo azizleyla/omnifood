@@ -5,31 +5,36 @@ import { navlinks } from "../constants";
 
 const Navbar = () => {
   return (
-    <NavContainer>
-      <div className="nav-row">
-        <div className="logo">
-          <a href="/#">
-            <img className="logo" src={logo} alt="logo" />
-          </a>
+    <Header>
+      <NavContainer>
+        <div className="nav-row">
+          <div className="logo">
+            <a href="/#">
+              <img className="logo" src={logo} alt="logo" />
+            </a>
+          </div>
+          <ul className="nav-menu">
+            {navlinks.map((navlink) => (
+              <li
+                key={navlink.id}
+                className={
+                  navlink.id === 6 ? "nav-item cta-link" : "nav-item"
+                }
+              >
+                <a href="/#" className="nav-item">
+                  {navlink.label}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
-        <ul className="nav-menu">
-          {navlinks.map((navlink) => (
-            <li
-              key={navlink.id}
-              className={
-                navlink.id === 6 ? "nav-item cta-link" : "nav-item"
-              }
-            >
-              <a href="/#" className="nav-item">
-                {navlink.label}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </NavContainer>
+      </NavContainer>
+    </Header>
   );
 };
+const Header = styled.header`
+  background-color: rgb(253, 242, 233);
+`;
 
 const NavContainer = styled.nav`
   padding: 2rem 4.8rem;
