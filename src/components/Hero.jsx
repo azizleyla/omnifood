@@ -31,7 +31,7 @@ const Hero = () => {
               you eat healthy again. Tailored to your personal tastes and
               nutritional needs.
             </p>
-            <a href="" className="btn btn--full">
+            <a href="/#" className="btn btn--full">
               Start eating well
             </a>
             <a href="#how" className="btn btn--outline">
@@ -39,8 +39,8 @@ const Hero = () => {
             </a>
             <div className="delivered-meals">
               <div className="delivered-imgs">
-                {images.map((img) => (
-                  <img src={img} alt="Customer photo" />
+                {images.map((img, index) => (
+                  <img key={index} src={img} alt="Customer" />
                 ))}
               </div>
               <p class="delivered-text">
@@ -78,6 +78,7 @@ const HeroContainer = styled.div`
   .hero-img-box {
     text-align: center;
     img {
+      width: 100%;
       @media (max-width: 992px) {
         width: 60%;
         margin: 0 auto;

@@ -6,7 +6,10 @@
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
-  @media (max-width: 576px) {
+  overflow-x: hidden;
+}
+@media (max-width: 992px) {
+  html {
     font-size: 50%;
   }
 }
@@ -21,7 +24,22 @@ ul {
 a {
   text-decoration: none;
 }
-img {
-  width: 100%;
+.subheading {
   display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #cf711f;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  letter-spacing: 0.75px;
+}
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
+}
+.container {
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
 }
